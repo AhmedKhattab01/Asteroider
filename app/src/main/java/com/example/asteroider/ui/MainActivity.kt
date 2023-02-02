@@ -6,7 +6,9 @@ import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.asteroider.R
 import com.example.asteroider.ui.home.HomeViewModel
+import com.example.data.mappers.MapPlanetaryResponseToPlanetary
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -17,13 +19,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        lifecycleScope.launch {
-            viewModel.getPlanetaryFromNetwork()
-        }
 
-        lifecycleScope.launch {
-            viewModel.getNeoFromNetwork()
-        }
+
+
+
 
     }
 }

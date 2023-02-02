@@ -1,7 +1,7 @@
 package com.example.data.local.dao
 
 import androidx.room.*
-import com.example.domain.entity.Neo
+import com.example.domain.entity.neo.Neo
 
 @Dao
 interface NeoDao {

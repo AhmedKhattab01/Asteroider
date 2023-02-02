@@ -7,10 +7,13 @@ buildscript {
     ext {
         version_retrofit = "2.9.0"
         version_lifecycle = "2.5.1"
-        version_hilt = "2.44"
+        version_hilt = "2.44.2"
         version_moshi = "1.8.0"
         version_coroutines = "1.6.4"
         version_room = "2.5.0"
+        version_glide = "4.14.2"
+        version_navigation = "2.5.3"
+
     }
 }
 

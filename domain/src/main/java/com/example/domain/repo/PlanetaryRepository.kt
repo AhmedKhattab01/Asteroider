@@ -1,7 +1,6 @@
 package com.example.domain.repo
 
-import com.example.domain.entity.Planetary
-import com.example.domain.entity.neo.NeoResponse
+import com.example.domain.entity.planetary.Planetary
 import com.example.domain.entity.planetary.PlanetaryResponse
 import retrofit2.Response
 

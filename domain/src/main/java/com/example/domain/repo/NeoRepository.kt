@@ -1,6 +1,6 @@
 package com.example.domain.repo
 
-import com.example.domain.entity.Neo
+import com.example.domain.entity.neo.Neo
 import com.example.domain.entity.neo.NeoResponse
 import retrofit2.Response
 

@@ -1,4 +1,4 @@
-package com.example.asteroider.di
+package com.example.data.di
 
 import com.example.data.Constants
 import com.example.data.network.ApiService

@@ -1,7 +1,7 @@
 package com.example.data.local.dao
 
 import androidx.room.*
-import com.example.domain.entity.Planetary
+import com.example.domain.entity.planetary.Planetary
 
 @Dao
 interface PlanetaryDao {

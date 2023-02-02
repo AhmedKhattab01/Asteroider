@@ -1,4 +1,4 @@
-package com.example.domain.entity
+package com.example.domain.entity.planetary
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo
