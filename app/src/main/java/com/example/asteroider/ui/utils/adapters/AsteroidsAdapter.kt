@@ -17,8 +17,11 @@ class AsteroidsAdapter :
     inner class AsteroidsViewHolder(private val binding: ItemRvAsteroidsBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        // bind neo with received item
         fun bind(item: Neo) {
             binding.neo = item
+
+            // set icon depends on hazardous value
             if (item.isHazardous) {
                 binding.imageView.setImageResource(R.drawable.hot_asteroid)
             }
@@ -39,8 +42,13 @@ class AsteroidsAdapter :
     }
 
     override fun onBindViewHolder(holder: AsteroidsViewHolder, position: Int) {
+        // call bind function and pass current item
         holder.bind(getItem(position))
 
+        // on item click listener
+        // check the destination the item called from
+        // if its home fragment it will use home fragment directions to navigate
+        // else it will use neo fragment directions
         holder.itemView.setOnClickListener {
             if (it.findNavController().currentDestination?.label == "Astroider") {
                 it.findNavController().navigate(

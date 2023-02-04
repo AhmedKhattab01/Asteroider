@@ -7,7 +7,6 @@ object NeoMappers {
     fun mapNeoResponseToNeo(response: NeoResponse): List<Neo> {
         val list: MutableList<Neo> = mutableListOf()
 
-
         response.nearEarthObjects.forEach { map ->
             map.value.forEach {
                 list.add(

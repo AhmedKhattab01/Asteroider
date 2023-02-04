@@ -23,9 +23,10 @@ class PlanetaryDetailsFragment : Fragment() {
 
         _binding = FragmentPlanetaryDetailsBinding.inflate(inflater, container, false)
 
-
+        // load image of day with glide from passed url string
         Glide.with(this).load(args.planetary.imageUrl).into(binding.ivOfDay)
 
+        // set text views values from the received args
         with(binding) {
             tvTitle.text = args.planetary.title
             tvDate.text = args.planetary.date
@@ -36,4 +37,8 @@ class PlanetaryDetailsFragment : Fragment() {
         return binding.root
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }

@@ -26,8 +26,10 @@ class NeoViewModel @Inject constructor(
     private val _neo: MutableStateFlow<List<Neo>?> = MutableStateFlow(null)
     val neo: StateFlow<List<Neo>?> get() = _neo
 
+    // get neo from local db
     fun getNeoFromLocal() = neoRepository.getNeoFromLocal()
 
+    // get neo from network
     fun getNeoFromNetwork() {
         viewModelScope.launch(Dispatchers.IO) {
             val response = try {
@@ -49,11 +51,12 @@ class NeoViewModel @Inject constructor(
         }
     }
 
-
+    // insert neo to db
     fun insertNeo(neo: List<Neo>) = viewModelScope.launch(Dispatchers.IO) {
         neoRepository.insertNeo(neo)
     }
 
+    // set neo value
     fun setNeo(neo: List<Neo>?) {
         _neo.value = neo
     }

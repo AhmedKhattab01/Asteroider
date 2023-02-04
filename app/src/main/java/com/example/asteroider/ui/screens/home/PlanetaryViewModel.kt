@@ -26,12 +26,15 @@ class PlanetaryViewModel @Inject constructor(
     private val _planetary: MutableStateFlow<Planetary?> = MutableStateFlow(null)
     val planetary: StateFlow<Planetary?> get() = _planetary
 
+    // get planetary from local db
     fun getPlanetaryFromLocal() = planetaryRepository.getPlanetaryFromLocal()
 
+    // insert planetary
     fun insertPlanetary(planetary: Planetary) = viewModelScope.launch(Dispatchers.IO) {
         planetaryRepository.insertPlanetary(planetary)
     }
 
+    // get planetary from api
     fun getPlanetaryFromNetwork() {
         viewModelScope.launch(Dispatchers.IO) {
             val response = try {
@@ -47,6 +50,7 @@ class PlanetaryViewModel @Inject constructor(
         }
     }
 
+    // set planetary value
     fun setPlanetary(planetary: Planetary?) {
         _planetary.value = planetary
     }

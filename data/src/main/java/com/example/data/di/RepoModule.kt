@@ -15,6 +15,8 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 object RepoModule {
+
+    // provide neo repo
     @Provides
     fun provideNeoRepo(
         apiService: ApiService,
@@ -23,6 +25,7 @@ object RepoModule {
         return NeoRepoImpl(apiService, neoDao)
     }
 
+    // provide planetary repo
     @Provides
     fun providePlanetaryRepo(
         apiService: ApiService,

@@ -21,12 +21,19 @@ class NeoFragment : Fragment() {
 
         _binding = FragmentNeoBinding.inflate(inflater, container, false)
 
+        // initialize adapter
         val adapter = AsteroidsAdapter()
         binding.rvAsteroids.adapter = adapter
 
+        // submit passed list
         adapter.submitList(args.neo.toMutableList())
         // Inflate the layout for this fragment
         return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

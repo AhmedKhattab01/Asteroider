@@ -15,18 +15,21 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object LocalModule {
+    // provide planetary dao
     @Provides
     @Singleton
     fun providesPlanetaryDao(asteroidDatabase: AsteroidDatabase): PlanetaryDao {
         return asteroidDatabase.getPlanetaryDao()
     }
 
+    // provide neo dao
     @Provides
     @Singleton
     fun providesNeoDao(asteroidDatabase: AsteroidDatabase): NeoDao {
         return asteroidDatabase.getNeoDao()
     }
 
+    // provide asteroid database
     @Provides
     @Singleton
     fun providesDatabase(@ApplicationContext context: Context): AsteroidDatabase {

@@ -23,7 +23,10 @@ class NeoDetailsFragment : Fragment() {
         _binding = FragmentNeoDetailsBinding.inflate(inflater, container, false)
 
         with(binding) {
+            // initialize neo
             neo = args.neo
+
+            // set image depends on received hazardous value
             if (args.neo.isHazardous) {
                 ivHazardous.setImageResource(R.drawable.hazardous)
             }
@@ -36,5 +39,8 @@ class NeoDetailsFragment : Fragment() {
         return binding.root
     }
 
-
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }

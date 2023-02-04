@@ -18,6 +18,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
+    // provide okhttp client
     @Provides
     @Singleton
     fun provideOkhttp(): OkHttpClient {
@@ -27,6 +28,7 @@ object NetworkModule {
             .build()
     }
 
+    // provide moshi object
     @Provides
     @Singleton
     fun providesMoshiInstance(): Moshi = Moshi
@@ -34,6 +36,7 @@ object NetworkModule {
         .add(KotlinJsonAdapterFactory())
         .build()
 
+    // provide retrofit instance
     @Provides
     @Singleton
     fun provideRetrofit(httpClient: OkHttpClient, moshi: Moshi): Retrofit {
@@ -44,6 +47,7 @@ object NetworkModule {
             .build()
     }
 
+    // provide api instance
     @Provides
     @Singleton
     fun provideApiService(retrofit: Retrofit) : ApiService {

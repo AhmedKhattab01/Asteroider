@@ -1,7 +1,6 @@
 package com.example.asteroider.ui.screens.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,13 +35,22 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-
+        // Initialize adapter
         val adapter = AsteroidsAdapter()
+
         with(binding) {
+            // Assign adapter to recycler view
             recyclerView.adapter = adapter
+
+            // Show progress bar
             progressBar.visibility = View.VISIBLE
+
+            // Hide planetary image view
             ivImageOfDay.visibility = View.GONE
 
+            // On image click listener
+            // Navigate to planetary details fragment
+            // pass args
             ivImageOfDay.setOnClickListener {
                 if (planetaryViewModel.planetary.value != null) {
                     val planetary = planetaryViewModel.planetary.value
@@ -54,18 +62,28 @@ class HomeFragment : Fragment() {
                 }
             }
 
+            // navigate to neo Details fragment
+            // pass args
             tvSeeAll.setOnClickListener {
                 val neo = neoViewModel.neo.value
-                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToNeoFragment2(neo!!.toTypedArray()))
+                findNavController().navigate(
+                    HomeFragmentDirections.actionHomeFragmentToNeoFragment2(
+                        neo!!.toTypedArray()
+                    )
+                )
             }
         }
 
 
+
         lifecycleScope.launch(Dispatchers.IO) {
             launch {
+                // Collect planetary from local database
                 planetaryViewModel.getPlanetaryFromLocal().collect {
+                    // initialize planetary
                     planetaryViewModel.setPlanetary(it)
 
+                    // load image if the image url field is not empty
                     if (planetaryViewModel.planetary.value != null) {
                         loadImage(it.imageUrl)
                     }
@@ -73,19 +91,24 @@ class HomeFragment : Fragment() {
             }
 
             launch {
+                // Collect neo from local database
                 neoViewModel.getNeoFromLocal().collect { neo ->
-                    Log.e("a7a", "list: $neo")
+                    // initialize neo
                     neoViewModel.setNeo(neo)
 
+                    // check if neo is not empty
                     if (neoViewModel.neo.value!!.isNotEmpty()) {
                         withContext(Dispatchers.Main) {
+                            // if not empty submit list
                             adapter.submitList(neo.filter { it.date == Util.getCurrentDate })
                         }
                     }
                 }
             }
 
+            // Initialize connectivity observer
             connectivityObserver = NetworkConnectivityObserver(requireContext().applicationContext)
+            // collect connectivity observer
             connectivityObserver.observe().collect {
                 // When network is unavailable
                 if (it == ConnectivityObserver.Status.Unavailable) {
@@ -93,13 +116,14 @@ class HomeFragment : Fragment() {
                 }
                 // When network is available
                 else if (it == ConnectivityObserver.Status.Available) {
-
+                    // call neo on network available
                     launch {
                         processNeoOnNetworkAvailable()
                     }
 
+                    // call planetary on network available
                     launch {
-                        delay(4000)
+                        delay(3000)
                         processPlanetaryOnNetworkAvailable()
                     }
                 }
@@ -112,6 +136,7 @@ class HomeFragment : Fragment() {
 
 
     private suspend fun processPlanetaryOnNetworkAvailable() {
+        // check if planetary is null
         if (planetaryViewModel.planetary.value == null) {
             planetaryViewModel.getPlanetaryFromNetwork()
             planetaryViewModel.planetaryResponse.collect { response ->
@@ -131,8 +156,8 @@ class HomeFragment : Fragment() {
 
     private suspend fun processNeoOnNetworkAvailable() {
         neoViewModel.neo.collect {
+            // check if neo is null or empty
             if ((it != null && it.isEmpty())) {
-                Log.e("a7a", "processNeoOnNetworkAvailable: called")
                 neoViewModel.getNeoFromNetwork()
                 neoViewModel.neoResponse.collect { response ->
                     // if response not equal null
@@ -152,10 +177,13 @@ class HomeFragment : Fragment() {
 
     private suspend fun loadImage(string: String) {
         withContext(Dispatchers.Main) {
+            // Load image with glide from passed string
             Glide.with(this@HomeFragment).load(string)
                 .into(binding.ivImageOfDay)
 
+            // Hide progress bar after loading
             binding.progressBar.visibility = View.INVISIBLE
+            // show planetary after loading
             binding.ivImageOfDay.visibility = View.VISIBLE
         }
     }
