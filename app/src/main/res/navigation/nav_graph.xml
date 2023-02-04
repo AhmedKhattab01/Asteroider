@@ -7,7 +7,66 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.asteroider.ui.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="com.example.asteroider.ui.screens.home.HomeFragment"
+        android:label="Astroider"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_planetaryDetailsFragment"
+            app:destination="@id/planetaryDetailsFragment">
+            <argument
+                android:name="planetary"
+                app:argType="com.example.domain.entity.planetary.Planetary" />
+        </action>
+        <action
+            android:id="@+id/action_homeFragment_to_neoDetailsFragment"
+            app:destination="@id/neoFragment">
+            <argument
+                android:name="neo"
+                app:argType="com.example.domain.entity.neo.Neo" />
+        </action>
+        <action
+            android:id="@+id/action_homeFragment_to_neoFragment2"
+            app:destination="@id/neoFragment2">
+            <argument
+                android:name="neo"
+                app:argType="com.example.domain.entity.neo.Neo[]" />
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/planetaryDetailsFragment"
+        android:name="com.example.asteroider.ui.screens.planetary_details.PlanetaryDetailsFragment"
+        android:label="Planetary Details"
+        tools:layout="@layout/fragment_planetary_details">
+        <argument
+            android:name="planetary"
+            app:argType="com.example.domain.entity.planetary.Planetary" />
+    </fragment>
+    <fragment
+        android:id="@+id/neoFragment"
+        android:name="com.example.asteroider.ui.screens.neo_details.NeoDetailsFragment"
+        android:label="Asteroid Details"
+        tools:layout="@layout/fragment_neo_details">
+        <argument
+            android:name="neo"
+            app:argType="com.example.domain.entity.neo.Neo" />
+    </fragment>
+    <fragment
+        android:id="@+id/neoFragment2"
+        android:name="com.example.asteroider.ui.screens.neo.NeoFragment"
+        android:label="Asteroids"
+        tools:layout="@layout/fragment_neo" >
+        <argument
+            android:name="neo"
+            app:argType="com.example.domain.entity.neo.Neo[]" />
+        <action
+            android:id="@+id/action_neoFragment2_to_neoFragment"
+            app:destination="@id/neoFragment">
+            <argument
+                android:name="neo"
+                app:argType="com.example.domain.entity.neo.Neo" />
+        </action>
+    </fragment>
+
 </navigation>

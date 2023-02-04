@@ -62,4 +62,8 @@ dependencies {
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version_coroutines"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_coroutines"
+
+    // Kotlin + coroutines
+    implementation "androidx.work:work-runtime-ktx:$version_work"
+
 }

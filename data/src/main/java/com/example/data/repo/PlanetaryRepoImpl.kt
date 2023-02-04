@@ -5,6 +5,7 @@ import com.example.data.network.ApiService
 import com.example.domain.entity.planetary.Planetary
 import com.example.domain.entity.planetary.PlanetaryResponse
 import com.example.domain.repo.PlanetaryRepository
+import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 
 class PlanetaryRepoImpl(
@@ -14,7 +15,8 @@ class PlanetaryRepoImpl(
     override suspend fun getPlanetaryFromNetwork(): Response<PlanetaryResponse> =
         apiService.getPlanetaryData()
 
-    override fun getPlanetaryFromLocal(): Planetary = planetaryDao.getPlanetary()
+    override fun getPlanetaryFromLocal(): Flow<Planetary> = planetaryDao.getPlanetary()
+
 
     override suspend fun insertPlanetary(planetary: Planetary) {
         planetaryDao.insertPlanetary(planetary)
