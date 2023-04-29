@@ -14,6 +14,8 @@ class NeoFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val args by navArgs<NeoFragmentArgs>()
+
+    val adapter = AsteroidsAdapter()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -22,11 +24,11 @@ class NeoFragment : Fragment() {
         _binding = FragmentNeoBinding.inflate(inflater, container, false)
 
         // initialize adapter
-        val adapter = AsteroidsAdapter()
         binding.rvAsteroids.adapter = adapter
 
         // submit passed list
         adapter.submitList(args.neo.toMutableList())
+
         // Inflate the layout for this fragment
         return binding.root
     }
@@ -35,5 +37,4 @@ class NeoFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
-
 }

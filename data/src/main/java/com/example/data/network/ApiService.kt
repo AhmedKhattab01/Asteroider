@@ -20,6 +20,6 @@ interface ApiService {
     @GET(NEO_END_POINT)
     suspend fun getNeoData(
         @Query("api_key") apiKey : String = API_KEY,
-        @Query("start_date") startDate : String = Util.getCurrentDate
+        @Query("start_date") startDate : String = Util.currentDate
     ) : Response<NeoResponse>
 }

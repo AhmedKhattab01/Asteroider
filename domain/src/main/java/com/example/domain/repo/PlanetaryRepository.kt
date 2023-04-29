@@ -8,7 +8,7 @@ import retrofit2.Response
 interface PlanetaryRepository {
     suspend fun getPlanetaryFromNetwork() : Response<PlanetaryResponse>
 
-    fun getPlanetaryFromLocal(): Flow<Planetary>
+    fun getPlanetaryFromLocal(): Flow<Planetary?>
 
     suspend fun insertPlanetary(planetary: Planetary)
 }

@@ -7,8 +7,7 @@ import retrofit2.Response
 
 interface NeoRepository {
     suspend fun getNeoFromNetwork() : Response<NeoResponse>
-
-    fun getNeoFromLocal(): Flow<List<Neo>>
+    fun getNeoFromLocal(): Flow<List<Neo>?>
     suspend fun insertNeo(neo: List<Neo>)
 
 }

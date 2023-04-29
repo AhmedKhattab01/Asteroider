@@ -28,15 +28,6 @@
         app:shapeAppearanceOverlay="@style/CurvedCorners" />
 
     <!-- Progress bar -->
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_image_of_day"
-        app:layout_constraintEnd_toEndOf="@+id/iv_image_of_day"
-        app:layout_constraintStart_toStartOf="@+id/iv_image_of_day"
-        app:layout_constraintTop_toTopOf="@+id/iv_image_of_day" />
 
     <!-- Today asteroid text -->
     <TextView

@@ -4,6 +4,6 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 object Util {
-    val getCurrentDate: String = LocalDateTime.now()
+    val currentDate: String = LocalDateTime.now()
         .format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
 }
