@@ -16,7 +16,9 @@ class PlanetaryRepoImpl(
         apiService.getPlanetaryData()
 
     override fun getPlanetaryFromLocal(): Flow<Planetary> = planetaryDao.getPlanetary()
-
+    override suspend fun deletePlanetaryTable() {
+        planetaryDao.deletePlanetaryTable()
+    }
 
     override suspend fun insertPlanetary(planetary: Planetary) {
         planetaryDao.insertPlanetary(planetary)

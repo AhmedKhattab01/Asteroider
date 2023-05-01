@@ -16,4 +16,7 @@ class NeoRepoImpl(
     override fun getNeoFromLocal(): Flow<List<Neo>> = neoDao.getNeo()
 
     override suspend fun insertNeo(neo: List<Neo>) = neoDao.insertPlanetary(neo)
+    override suspend fun deleteNeoTable() {
+        neoDao.deleteNeoTable()
+    }
 }

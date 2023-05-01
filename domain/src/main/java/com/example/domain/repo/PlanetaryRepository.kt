@@ -10,5 +10,7 @@ interface PlanetaryRepository {
 
     fun getPlanetaryFromLocal(): Flow<Planetary?>
 
+    suspend fun deletePlanetaryTable()
+
     suspend fun insertPlanetary(planetary: Planetary)
 }

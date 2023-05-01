@@ -10,4 +10,7 @@ interface NeoRepository {
     fun getNeoFromLocal(): Flow<List<Neo>?>
     suspend fun insertNeo(neo: List<Neo>)
 
+
+    suspend fun deleteNeoTable()
+
 }

@@ -7,11 +7,18 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.work.Constraints
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.NetworkType
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
 import com.example.asteroider.R
 import com.example.asteroider.databinding.ActivityMainBinding
 import com.example.asteroider.ui.screens.home.AsteroiderViewModel
+import com.example.data.work_manager.MyWorker
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import java.util.concurrent.TimeUnit
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -19,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     private val binding get() = _binding!!
     private lateinit var navController: NavController
 
-    private val asteroiderViewModel : AsteroiderViewModel by viewModels()
+    private val asteroiderViewModel: AsteroiderViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -53,7 +60,20 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+        val workerConstraint = Constraints.Builder()
+            .setRequiredNetworkType(NetworkType.CONNECTED)
+            .setRequiresCharging(false)
+            .build()
+
+        val workRequest = PeriodicWorkRequestBuilder<MyWorker>(1, TimeUnit.DAYS)
+            .setConstraints(workerConstraint)
+            .build()
+
+        WorkManager.getInstance(this)
+            .enqueueUniquePeriodicWork("Refresh Worker",ExistingPeriodicWorkPolicy.KEEP,workRequest)
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()

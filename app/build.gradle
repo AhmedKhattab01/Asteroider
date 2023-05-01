@@ -58,6 +58,10 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$version_hilt"
     kapt "com.google.dagger:hilt-compiler:$version_hilt"
 
+    implementation 'androidx.hilt:hilt-work:1.0.0'
+    kapt "androidx.hilt:hilt-compiler:1.0.0"
+
+
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$version_retrofit"
     implementation "com.squareup.retrofit2:converter-moshi:$version_retrofit"
