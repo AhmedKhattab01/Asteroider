@@ -22,8 +22,8 @@ Asteroider is an Android application that displays data for upcoming near earth 
 
 Below are the mockup images for the Asteroider app:
 
-![Mockup Image 1](/path/to/mockup-image-1.png)
-![Mockup Image 2](/path/to/mockup-image-2.png)
+![Mockup Image 1](/mocks/home.png)
+![Mockup Image 2](/mocks/planetary_details.png)
 
 ## Installation
 
