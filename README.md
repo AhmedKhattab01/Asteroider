@@ -27,7 +27,7 @@ Below are the mockup images for the Asteroider app:
 </div>
 
 <div style="display: inline-block">
-    <img src="/mocks/planetary_details" alt="Mockup Image 1" height="350">
+    <img src="/mocks/planetary_details" alt="Mockup Image 2" height="350">
 </div>
 
 <div style="display: inline-block">
