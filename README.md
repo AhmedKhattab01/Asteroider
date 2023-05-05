@@ -1,3 +1,11 @@
+
+<p align="center">
+  <img src="/mocks/home.png" alt="Mockup Image 1" height="350" />
+  <img src="/mocks/planetary_details.png" alt="Mockup Image 2" height="350" />
+  <img src="/mocks/asteroid_details.png" alt="Mockup Image 3" height="350" />
+  <img src="/mocks/all_asteroids.png" alt="Mockup Image 4" height="350" />
+</p>
+
 # Asteroider
 
 Asteroider is an Android application that displays data for upcoming near earth objects and daily new planetary photos with explanations provided by NASA. This app is intended as a project for my portfolio and is available on GitHub.
@@ -17,17 +25,6 @@ Asteroider is an Android application that displays data for upcoming near earth 
   - Repository Pattern and MVVM: for separation of concerns and maintainability
   - Hilt: for dependency injection
   - Work Manager: for scheduling and managing background tasks
-
-## Mockup Images
-
-Below are the mockup images for the Asteroider app:
-
-<p align="center">
-  <img src="/mocks/home.png" alt="Mockup Image 1" height="350" />
-  <img src="/mocks/planetary_details.png" alt="Mockup Image 2" height="350" />
-  <img src="/mocks/asteroid_details.png" alt="Mockup Image 3" height="350" />
-  <img src="/mocks/all_asteroids.png" alt="Mockup Image 4" height="350" />
-</p>
 
 ## Installation
 
