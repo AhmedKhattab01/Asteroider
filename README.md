@@ -22,21 +22,12 @@ Asteroider is an Android application that displays data for upcoming near earth 
 
 Below are the mockup images for the Asteroider app:
 
-<div style="display: inline-block">
-    <img src="/mocks/home.png" alt="Mockup Image 1" height="350">
-</div>
-
-<div style="display: inline-block">
-    <img src="/mocks/planetary_details.png" alt="Mockup Image 2" height="350">
-</div>
-
-<div style="display: inline-block">
-    <img src="/mocks/asteroid_details.png" alt="Mockup Image 1" height="350">
-</div>
-
-<div style="display: inline-block">
-    <img src="/mocks/all_asteroids.png" alt="Mockup Image 1" height="350">
-</div>
+<p align="center">
+  <img src="/mocks/home.png" alt="Mockup Image 1" height="350" />
+  <img src="/mocks/planetary_details.png" alt="Mockup Image 2" height="350" />
+  <img src="/mocks/asteroid_details.png" alt="Mockup Image 3" height="350" />
+  <img src="/mocks/all_asteroids.png" alt="Mockup Image 4" height="350" />
+</p>
 
 ## Installation
 
