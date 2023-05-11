@@ -1,5 +1,5 @@
 
-# Get the app on playstore 
+<h1 align="center"> Get the app on playstore </h1>
 <p align="center"> <a href="" target="_blank"/> <img src="https://i0.wp.com/www.techdigest.tv/wp-content/uploads/2021/02/get-it-on-google-play-badge.png" width="250"/> </a> </p>
 
 <br>
