@@ -1,4 +1,4 @@
-<p> <a href="" taget="_blank" align="center"/> <img src="https://www.freepnglogos.com/uploads/google-play-png-logo/google-play-arrow-png-logo-8.png" height="350" align="center"/> </a> </p>
+<p align="center"> <a href="" taget="_blank"/> <img src="https://www.freepnglogos.com/uploads/google-play-png-logo/google-play-arrow-png-logo-8.png" height="350"/> </a> </p>
 
 <p align="center">
   <img src="/mocks/home.png" alt="Mockup Image 1" height="350" />
