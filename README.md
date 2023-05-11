@@ -1,4 +1,4 @@
-<p align="center"> <a href="" target="_blank"/> <img src="https://assets.stickpng.com/images/5a902dbf7f96951c82922875.png" height="250"/> </a> </p>
+<p align="center"> <a href="" target="_blank"/> <img src="https://www.freepnglogos.com/uploads/google-play-png-logo/get-it-on-google-play-google-play-badge-png-logos-23.png" height="250"/> </a> </p>
 
 <br>
 
