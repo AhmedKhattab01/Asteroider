@@ -1,11 +1,9 @@
 
-<br>
-
-
-
 # Asteroider
 
 Asteroider is an Android application that displays data for upcoming near earth objects and daily new planetary photos with explanations provided by NASA. This app is intended as a project for my portfolio and is available on GitHub.
+
+<br>
 
 <p align="center">
   <img src="/mocks/home.png" alt="Mockup Image 1" height="350" />
