@@ -1,4 +1,4 @@
-<p align="center"> <a href="" target="_blank"/> <img src="https://www.freepnglogos.com/uploads/google-play-png-logo/google-play-arrow-png-logo-8.png](https://bhagyodayabank.com/wp-content/uploads/2020/01/google-play-store-logo-png-transparent-png-logos-10.png" height="250"/> </a> </p>
+<p align="center"> <a href="" target="_blank"/> <img src="https://bhagyodayabank.com/wp-content/uploads/2020/01/google-play-store-logo-png-transparent-png-logos-10.png" height="250"/> </a> </p>
 
 <br>
 
